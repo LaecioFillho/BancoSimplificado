@@ -9,6 +9,16 @@ public class RegistrationUser {
     private Date birth;
     private String password;
 
+    public RegistrationUser(String name, String email, Date birth, String password){
+
+        this.name = name;
+        this.email = email;
+        this.birth = birth;
+        this.password = password;
+
+        new ConnectionBD.DAO().registrationUsers(this.name, this.email, null, this.password);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
