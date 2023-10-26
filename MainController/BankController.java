@@ -1,7 +1,9 @@
 package MainController;
 
+import java.util.Date;
 import java.util.Scanner;
 import Account.CurrentAccount;
+import User.RegistrationUser;
 import VerificationSegurance.LoginVerificationSegurance;
 
 public class BankController {
@@ -56,12 +58,19 @@ public class BankController {
 
     public static void openSavingsAccount() {
 
+        Scanner input = new Scanner(System.in);
+        RegistrationUser registration = new RegistrationUser(null, null, null, null);
+        
         System.out.println("Abra sua conta poupança, simples, rapido e facil!");
         System.out.println("_________________________________________________");
-        System.out.println("Digite seu nome: ");
+        System.out.print("Digite seu nome: ");
+        registration.setName(input.nextLine());
         System.out.println("Digite sua data de nascimento: ");
+        //registration.setbirth( input.nextInt());
         System.out.println("Digite seu email: ");
+        registration.setEmail(input.nextLine());
         System.out.println("Digite uma senha: ");
+        registration.setPassword(input.nextLine());
         System.out.println("Confirme a senha: ");
 
     }

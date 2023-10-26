@@ -7,7 +7,7 @@ import java.sql.DriverManager;
 
 public class  ConectionSQL{
 
-    private static final String url = "jdbc:mysql://localhost:3306/XXXXXXX";
+    private static final String url = "jdbc:mysql://localhost:3306/banco_simplificado";
     private static final String user = "root";
 
     private static Connection con;
@@ -19,7 +19,7 @@ public class  ConectionSQL{
                 con = DriverManager.getConnection(url, user, "");
                 return con;
             } else {
-                return null;
+                return con;
             }
         } catch (Exception e) {
             System.out.println("Não conectou ao Banco de Dados!");

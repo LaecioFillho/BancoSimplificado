@@ -1,9 +1,12 @@
 package User;
 
 import java.util.Date;
+import java.util.UUID;
+import ConnectionBD.DAO;
 
 public class RegistrationUser {
 
+    private UUID id;
     private String name;
     private String email;
     private Date birth;
@@ -16,7 +19,16 @@ public class RegistrationUser {
         this.birth = birth;
         this.password = password;
 
-        new ConnectionBD.DAO().registrationUsers(this.name, this.email, null, this.password);
+        new DAO().registrationUsers(this.name, this.email, this.password);
+
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public void setName(String name) {
