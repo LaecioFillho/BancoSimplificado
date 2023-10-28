@@ -1,10 +1,8 @@
 package MainController;
 
-import java.util.Date;
 import java.util.Scanner;
 import Account.CurrentAccount;
 import Account.SavingsAccount;
-import User.RegistrationUser;
 import VerificationSegurance.LoginVerificationSegurance;
 
 public class BankController {
@@ -71,20 +69,34 @@ public class BankController {
     public static void openSavingsAccount() {
 
         Scanner input = new Scanner(System.in);
-        SavingsAccount savingsAccount = new SavingsAccount(null, null, null, null);
-        
+        String resgistration = "yes";
+
+        while (resgistration.equals("yes")) {
+                    
+        System.out.println();
+        System.out.println("_________________________________________________");
         System.out.println("Abra sua conta poupança, simples, rapido e facil!");
         System.out.println("_________________________________________________");
+        System.out.println();
         System.out.print("Digite seu nome: ");
-        savingsAccount.setName(input.nextLine());
-        System.out.println("Digite sua data de nascimento: ");
+        String name = input.nextLine();
+        //System.out.println("Digite sua data de nascimento: ");
         //savingsAccount.setbirth( input.nextInt());
-        System.out.println("Digite seu email: ");
-        savingsAccount.setEmail(input.nextLine());
-        System.out.println("Digite uma senha: ");
-        savingsAccount.setPassword(input.nextLine());
-        System.out.println("Confirme a senha: ");
+        System.out.print("Digite seu email: ");
+        String email = input.nextLine();
+        System.out.print("Digite uma senha: ");
+        String password= input.nextLine();
+        System.out.print("Confirme a senha: ");
 
+        SavingsAccount savingsAccount = new SavingsAccount(name, email, null, password);
+        System.out.println();
+        System.out.println("____________________");
+        System.out.println("Cadastro realizado!");
+        System.out.println("____________________");
+        resgistration = "no";
+
+        }
+        
     }
 
     public static void openCurrentAccount() {
@@ -97,7 +109,7 @@ public class BankController {
         System.out.println("_________________________________________________");
         System.out.println("Digite seu nome: ");
         currentAccount.setName(input.nextLine());
-        System.out.println("Digite sua data de nascimento: ");
+        //System.out.println("Digite sua data de nascimento: ");
         //currentAccount.setbirth(input.nextLine().formatted(Date));
         System.out.println("Digite seu email: ");
         currentAccount.setEmail(input.nextLine());

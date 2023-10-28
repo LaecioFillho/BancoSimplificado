@@ -1,13 +1,12 @@
 package ConnectionBD;
 
-import java.sql.Date;
 import java.sql.PreparedStatement; 
 
 public class DAO {
 
       public void registrationUsers(String name, String email, String password){
 
-      String sql = "INSERT INTO USUARIO (nome,email, senha) VALUES (?,?,?)";
+      String sql = "INSERT INTO cadastro_usuarios (nome,email, senha) VALUES (?,?,?)";
       PreparedStatement ps = null;
       ConectionSQL conection = new ConectionSQL();
 
