@@ -7,7 +7,7 @@ public class DAO {
 
       public void registrationUsers(String name, String email, String password){
 
-      String sql = "INSERT INTO USUARIO (nome, nascimento, senha) VALUES (?,?,?,?)";
+      String sql = "INSERT INTO USUARIO (nome,email, senha) VALUES (?,?,?)";
       PreparedStatement ps = null;
       ConectionSQL conection = new ConectionSQL();
 
