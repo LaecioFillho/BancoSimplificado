@@ -85,16 +85,22 @@ public class BankController {
         System.out.print("Digite seu email: ");
         String email = input.nextLine();
         System.out.print("Digite uma senha: ");
-        String password= input.nextLine();
+        String password = input.nextLine();
         System.out.print("Confirme a senha: ");
+        String password2 = input.nextLine();
 
-        SavingsAccount savingsAccount = new SavingsAccount(name, email, null, password);
-        System.out.println();
-        System.out.println("____________________");
-        System.out.println("Cadastro realizado!");
-        System.out.println("____________________");
-        resgistration = "no";
-
+        if(password.equals(password2)){
+            SavingsAccount savingsAccount = new SavingsAccount(name, email, null, password);
+            System.out.println();
+            System.out.println("____________________");
+            System.out.println("Cadastro realizado!");
+            System.out.println("____________________");
+            resgistration = "no";
+        }else{
+            System.out.println("Senhas duvergente!");
+            resgistration = "yes";
+        }
+        
         }
         
     }
@@ -129,9 +135,10 @@ public class BankController {
         System.out.println("Olá Sr. xxxxxx. O que deseja: ");
         System.out.println("___________________________");
         System.out.println("1 - Consutar Informações da Conta.");
-        System.out.println("2 - Cancelar conta.");
+        System.out.println("2 - Realizar transferencia.");
+        System.out.println("3 - Cancelar conta.");
         System.out.println();
-        System.out.println("Deseja encerrar?");
+        System.out.println("4 - Sair?");
         option = input.nextInt();
 
         }
